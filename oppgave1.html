@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Oppgave 1. Glasset med ananasjuice (25%)</title>
+	<style>
+		/*
+			*******
+				Denne CSS-koden skal ikke endres
+			*******
+		*/
+		#glass-div{
+			width: 150px;
+			height: 350px;
+			border: 1px solid black;
+			border-top: none;
+			margin-top: 50px;
+			position: relative;
+		}		
+		#juice-div{
+			height: 50px;
+			width: 100%;
+			background-image: linear-gradient(red, yellow);
+			opacity: 0.5;
+			position: absolute;
+			bottom: 0;
+			transition: height 2s;
+		}		
+		#status-p{
+			color: red;
+		}		
+	</style>
+</head>
+<body>
+		
+	<h3>Ananasjuicedrikking</h3>
+	
+	<label>Juice-mengde</label>
+	<input id="juice-amount-txt" type="text">
+	
+	<input id="pour-more-juice-btn" type="button" value="Hell i mer juice">
+	<input id="drink-juice-btn" type="button" value="Drikk juice">
+	
+	<p id="status-p">Status nå: OK</p>
+	
+	<div id="glass-div">
+		<span id="juice-level-span">50</span>
+		<div id="juice-div"></div>
+	</div>
+		
+	<script>
+		/* Besvarelse her */	
+		const inputTxt = document.getElementById("juice-amount-txt");
+		const moreJuiceBtn = document.getElementById("pour-more-juice-btn");
+		const lessJuiceBtn = document.getElementById("drink-juice-btn");
+
+		const statusTxt = document.getElementById("status-p");
+
+		const juiceAmount = document.getElementById("juice-level-span");
+		const currentJuiceLevel = document.getElementById("juice-div");
+		
+		let juiceNumber = 50;
+
+		moreJuiceBtn.onclick = moreJuice;
+
+		function moreJuice(){
+			if(isNaN(parseInt(inputTxt.value))){
+				statusTxt.innerText = "Status nå: Du må skrive inn ett tall!";
+				return;
+			}
+
+			if(juiceNumber >= 350){
+				juiceNumber = 350;
+				statusTxt.innerText = "Status nå: Glasset er fullt";
+			}
+
+			else {
+				juiceNumber += parseInt(inputTxt.value);
+				statusTxt.innerText = "Status nå: OK";
+			}
+
+			updateJuiceLevel();
+		}
+
+		lessJuiceBtn.onclick = lessJuice;
+
+		function lessJuice(){
+			if(isNaN(parseInt(inputTxt.value))){
+				statusTxt.innerText = "Status nå: Du må skrive inn ett tall!";
+				return;
+			}
+
+			if(juiceNumber <= 0){
+				juiceNumber = 0;
+				statusTxt.innerText = "Status nå: Glasset er tomt"
+			}
+
+			else {
+				juiceNumber -= parseInt(inputTxt.value);
+				statusTxt.innerText = "Status nå: OK";
+			}
+
+			updateJuiceLevel();
+		}
+
+		function updateJuiceLevel(){
+			juiceAmount.innerHTML = juiceNumber;
+			currentJuiceLevel.style.height = juiceNumber + "px";
+		}
+
+	</script>
+	
+</body>
+</html>

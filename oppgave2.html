@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oppgave 2 - Dragracing</title>
+    <link rel="stylesheet" href="oppgave2.css">
+</head>
+<body>
+
+    <h1>Dragracing</h1>
+
+    <div id="road-div"></div>
+    
+    <img id="blue-car" src="images/blue-car.png">
+    <img id="green-car" src="images/green-car.png">
+    <img id="red-car" src="images/red-car.png">
+
+    <div id="finish-line"></div>
+
+    <div id="output-div"></div>
+
+    <!--Legger til en knapp-->
+    
+    <input id="add-box-btn" type="button" value="Start">
+
+    <script>
+        const blueCar = document.getElementById("blue-car");
+        const greenCar = document.getElementById("green-car");
+        const redCar = document.getElementById("red-car");
+
+        const output = document.getElementById("output-div");
+
+        const btn = document.getElementById("add-box-btn");
+
+
+        btn.style.position = "absolute";
+        btn.style.top = "400px";
+
+        let blueCarPosition = 0;
+        let greenCarPosition = 0;
+        let redCarPosition = 0;
+
+        const finishLine = 700;
+
+        btn.onclick = dragracing;
+
+        function dragracing(){
+
+            const calculation = setInterval(function () {
+                blueCarPosition += Math.floor(Math.random() * 201)
+                greenCarPosition += Math.floor(Math.random() * 201)
+                redCarPosition += Math.floor(Math.random() * 201)
+
+                blueCar.style.left = blueCarPosition + "px";
+                greenCar.style.left = greenCarPosition + "px";
+                redCar.style.left = redCarPosition + "px";
+
+                if(blueCarPosition >= finishLine || greenCarPosition >= finishLine || redCarPosition >= finishLine){
+                    clearInterval(calculation);
+
+                    whoWon();
+                }
+            }, 2000);
+
+        }
+        
+        function whoWon(){
+            if(blueCarPosition >= finishLine){
+                output.innerText = "Blue Won!"
+                output.style.color = "blue"
+            }
+            else if(greenCarPosition >= finishLine){
+                output.innerHTML = "Green Won!"
+                output.style.color = "green"
+            }
+            else if(redCarPosition >= finishLine){
+                output.innerHTML = "Red Won!"
+                output.style.color = "red"
+            }
+        }
+
+
+
+
+
+
+
+        /*
+        setInterval(function () {
+            Math.floor(Math.random() * 201)
+        }, 2000);
+        */
+        
+    </script>
+
+</body>
+</html>

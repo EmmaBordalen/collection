@@ -1,0 +1,313 @@
+/*legger til Custom fonts*/
+
+@font-face {
+    font-family: 'CustomFont';
+    src: url('fonts/StardewValley.ttf');
+}
+
+/*legger til custom cursor*/
+
+html {
+    cursor: pointer;
+    cursor: help;
+    cursor: progress;
+    cursor: url("CURSOR/cursor.cur"), auto
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/*Plasserer bakgrunnen og gjør bildet uskarpt*/
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    filter: blur(3.5px);
+}
+
+/*plasserer stardew logoen*/
+
+.stardew-logo {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    top: 120px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.stardew-logo:hover {
+  transform: scale(1.1);
+}
+
+/*lager en container med alt innholdet på siden*/
+
+.container {
+    position: relative;
+    width: 1920px;
+    min-width: 1024px;
+    height: 1080px;
+    min-height: 768px;
+}
+
+/*plasserer intro teksten, gir den en border og bakgrunn*/
+
+.intro-text {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border: 20px solid transparent;
+    border-image-source: url('images/Border.png');
+    border-image-slice: 20;
+    border-image-repeat: stretch;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: 'CustomFont';
+    font-size: 35px;
+    width: 1050px;
+    top: 410px;
+}
+
+/*legger til custom font på overskriftene*/
+
+h1 {
+    position: relative;
+    left: 5px;
+    color: #258BF0;
+    font-family: 'CustomFont';
+}
+
+/*plasserer sommer ikonet til stardew*/
+
+.summer-icon {
+    position: absolute;
+    border: 15px solid transparent;
+    border-image-source: url('images/Border.png');
+    border-image-slice: 20;
+    border-image-repeat: stretch;
+    right: 0px;
+    width: 100px;
+    top: 300px;
+}
+
+/*plasserer kalenderen til sommer*/
+
+.calendar-summer {
+    position: absolute;
+    right: 0px;
+    top: 410px;
+    width: 780px;
+}
+
+/*legger til sommer tre, gir den en border og bakgrunn*/
+
+.oak-summer {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border: 20px solid transparent;
+    border-image-source: url('images/Border.png');
+    border-image-slice: 20;
+    border-image-repeat: stretch;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    right: 0px;
+    top: 1000px;
+    width: 300px;
+}
+
+/*plasserer festival tabellen, gir den en border og bakgrunn*/
+
+.festivals {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border: 20px solid transparent;
+    border-image-source: url('images/Border.png');
+    border-image-slice: 20;
+    border-image-repeat: stretch;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    top: 1000px;
+    font-family: 'CustomFont';
+    font-size: 35px;
+    width: 682px;
+    height: 530px;
+}
+
+/*gjør festival ikonene større*/
+
+.festival-icon {
+    width: 55px;
+}
+
+/*plasserer forage tabellen, gir den en border og bakgrunn*/
+
+.forage {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border: 20px solid transparent;
+    border-image-source: url('images/Border.png');
+    border-image-slice: 20;
+    border-image-repeat: stretch;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 870px;
+    top: 1630px;
+    font-family: 'CustomFont';
+    font-size: 35px;
+}
+
+/*plasserer crops tabellen, gir den en border og bakgrunn*/
+
+.crops {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border: 20px solid transparent;
+    border-image-source: url('images/Border.png');
+    border-image-slice: 20;
+    border-image-repeat: stretch;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    top: 1000px;
+    right: 400px;
+    font-family: 'CustomFont';
+    font-size: 35px;
+    height: 530px;
+    width: 682px;
+}
+
+/*plasserer crops tabellen, gir den en border og bakgrunn*/
+
+.fish {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border: 20px solid transparent;
+    border-image-source: url('images/Border.png');
+    border-image-slice: 20;
+    border-image-repeat: stretch;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    right: 0px;
+    top: 1630px;
+    font-family: 'CustomFont';
+    font-size: 35px;
+    width: 900px;
+}
+
+/*koden for hvordan tabellene skal se ut*/
+
+table {
+    position: relative;
+    width: auto;
+    border-collapse: collapse;
+    margin: 10px;
+    padding: auto;
+    background-color: papayawhip; 
+    color: black;
+    /**text-align: center;**/
+    border: 1px solid #004d99; 
+    table-layout: auto;
+    float: none;
+    justify-content: space-between;
+    display: inline-block;
+}
+
+th {
+    background-color: rgb(192, 117, 68);
+    color: black;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 1px solid black;
+}
+
+td {
+    padding: 10px;
+    border: 1px solid black; 
+}
+
+/*gjør sånn at du kan hovre over tabellen slik at den blir grønn*/
+
+tr:hover {
+    background-color: limegreen;
+}
+
+/*Animasjonen til den røde sommerfuglen*/
+
+@keyframes flutter {
+    from {transform: rotateX(0);}
+    to {transform: rotateX(80deg);}
+}
+
+.butterfly {
+    position: absolute;
+    width: 200px;
+    top: 200px;
+    animation-name: flutter;
+    animation-duration: 200ms;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rotate {
+    /*
+    0%   {left:-200px; transform: rotate(0deg);}
+    25%  {transform: rotate(-30deg);}
+    50%  {transform: rotate(0deg);}
+    75%  {transform: rotate(-30deg);}
+    100% {left:2500px; transform: rotate(0deg);}*/
+    from {transform: rotate(0);}
+    to {transform: rotate(-360deg);}
+}
+
+.butterfly-container {
+    position: absolute;
+    animation-name: rotate;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    z-index: 1;
+    left: 500px;
+    top: 200px;
+}
+
+/*Animasjonen til den blå sommerfuglen*/
+
+.butterfly-blue {
+    position: absolute;
+    width: 200px;
+    top: 200px;
+    animation-name: flutter;
+    animation-duration: 200ms;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rotate-blue {
+    from {transform: rotate(0);}
+    to {transform: rotate(360deg);}
+}
+
+.butterfly-container-blue {
+    position: absolute;
+    animation-name: rotate-blue;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    z-index: 1;
+    right: 500px;
+    top: 900px;
+}
+

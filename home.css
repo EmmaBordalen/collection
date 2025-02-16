@@ -1,0 +1,79 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+.main {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: monospace;
+    text-transform: uppercase;
+}
+
+.btns {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    animation: mymove 10s infinite;
+}
+
+@keyframes mymove{
+    from{
+        color: #2500b0;
+    }
+    10%{
+        color: #851267;
+    }
+    20%{
+        color: #cd4a34;
+    }
+    30%{
+        color: #ddd040;
+    }
+    40%{
+        color: #6dd245;
+    }
+    50%{
+        color: #5cb1be;
+    }
+    60%{
+        color: #6dd245;
+    }
+    70%{
+        color: #ddd040;
+    }
+    80%{
+        color: #cd4a34;
+    }
+    90%{
+        color: #851267;
+    }
+    100%{
+        color: #2500b0;
+    }
+}
+
+button {
+    font-family: monospace;
+    border-radius: 0%;
+    text-transform: uppercase;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+hr {
+    width: 200px;
+}
+
+
+
